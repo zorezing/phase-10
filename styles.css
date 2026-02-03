@@ -1,0 +1,153 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f7f8fa;
+  color: #1b1f24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-header {
+  padding: 2rem 3rem 1rem;
+  background: white;
+  border-bottom: 1px solid #e0e5ea;
+}
+
+.app-header p {
+  max-width: 720px;
+  color: #4a5565;
+}
+
+.app {
+  padding: 2rem 3rem 3rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.setup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.setup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.setup input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c7d1db;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 140px;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.deck-section,
+.results {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.players {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.player-card {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #e0e5ea;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+.card-entry {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-entry.inline {
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+}
+
+textarea,
+input[type="number"] {
+  border: 1px solid #c7d1db;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.hint {
+  color: #59667a;
+  margin-top: -0.5rem;
+}
+
+.results-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.summary-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.summary-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-card li {
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed #d4dce6;
+}
+
+.player-probability {
+  font-size: 0.9rem;
+  color: #1f2937;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.75rem;
+  border: 1px dashed #cbd5f5;
+}
+
+.player-probability ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0;
+}
