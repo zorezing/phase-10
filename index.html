@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phase 10 Probability Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Phase 10 Probability Tracker</h1>
+    <p>
+      Enter known cards and discards to estimate what cards are still available and
+      the likelihood of them being in each player&apos;s hand.
+    </p>
+  </header>
+
+  <main class="app">
+    <section class="setup">
+      <div>
+        <label for="player-count">Number of players</label>
+        <input id="player-count" type="number" min="2" max="6" value="4" />
+      </div>
+      <div>
+        <label for="hand-size">Cards per player</label>
+        <input id="hand-size" type="number" min="1" max="20" value="10" />
+      </div>
+      <button id="build-players">Create player windows</button>
+    </section>
+
+    <section class="deck-section">
+      <h2>Global known cards</h2>
+      <p class="hint">Use this to enter your hand, revealed sets, or any other cards known to be removed from the deck.</p>
+      <div class="card-entry">
+        <label for="global-cards">Known cards (one per line)</label>
+        <textarea id="global-cards" rows="6" placeholder="Examples:
+Red 5
+Blue 12
+Wild
+Skip"></textarea>
+      </div>
+    </section>
+
+    <section class="players" id="players"></section>
+
+    <section class="results">
+      <h2>Probability summary</h2>
+      <div class="results-grid">
+        <div>
+          <h3>Remaining deck</h3>
+          <div id="deck-summary" class="summary-card"></div>
+        </div>
+        <div>
+          <h3>Player expectations</h3>
+          <div id="player-summary" class="summary-card"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="player-template">
+    <article class="player-card">
+      <header>
+        <h3></h3>
+      </header>
+      <div class="card-entry">
+        <label>Known cards in hand (one per line)</label>
+        <textarea class="known-hand" rows="5" placeholder="Red 7
+Yellow 11"></textarea>
+      </div>
+      <div class="card-entry">
+        <label>Cards discarded/played (one per line)</label>
+        <textarea class="discarded" rows="5" placeholder="Green 2
+Skip"></textarea>
+      </div>
+      <div class="card-entry inline">
+        <label>Unknown cards in hand</label>
+        <input class="unknown-count" type="number" min="0" value="0" />
+      </div>
+      <div class="player-probability"></div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
